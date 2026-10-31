@@ -1,5 +1,4 @@
 
-# Progressive Electricity Billing System
 
 def calculate_energy_charge(units):
 
@@ -18,14 +17,13 @@ def calculate_energy_charge(units):
     return charge
 
 
-# Fixed tariff details
 FIXED_CHARGE = 50
 SURCHARGE_RATE = 0.05
 REBATE_RATE = 0.10
 
 bills = []
 
-# Number of months
+
 n = int(input("Enter number of months: "))
 
 for i in range(n):
@@ -38,19 +36,19 @@ for i in range(n):
         print("Invalid units!")
         continue
 
-    # Calculate energy charge
+   
     energy_charge = calculate_energy_charge(units)
 
-    # Calculate surcharge
+   
     surcharge = energy_charge * SURCHARGE_RATE
 
-    # Apply rebate
-    if units < 100:
+     energy_charge = calculate_energy_charge(units)
+
         rebate = energy_charge * REBATE_RATE
     else:
         rebate = 0
 
-    # Calculate final bill
+   
     total_bill = (
         energy_charge
         + FIXED_CHARGE
@@ -66,7 +64,7 @@ for i in range(n):
     print("Rebate: Rs.", round(rebate, 2))
     print("Final Bill: Rs.", round(total_bill, 2))
 
-    # Compare with previous month
+   
     if len(bills) > 1:
 
         previous_bill = bills[-2]
@@ -87,7 +85,7 @@ for i in range(n):
         else:
             print("Normal bill variation.")
 
-# Monthly bill summary
+
 print("\n----- MONTHLY BILL SUMMARY -----")
 
 for i, bill in enumerate(bills):
